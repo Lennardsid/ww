@@ -65,7 +65,7 @@ local function ISVF_fake_script() -- Textframe.LocalScript
 			  sound:Play()
 	     end
 	end
-	CoolTyping(script.Parent.TextLabel, "Thank You For Using Eclipse Hub We Hope You Like Our Script")
+	CoolTyping(script.Parent.TextLabel, "Sorry This Game is Not Supported At The Time")
 	wait(2)
 	script.Parent.Background.BackgroundTransparency = script.Parent.Background.BackgroundTransparency + 0.1
 		wait(0.1)
