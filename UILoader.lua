@@ -31,7 +31,10 @@ TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextScaled = true
 TextLabel.TextSize = 14.000
 TextLabel.TextWrapped = true
-
+local blur = Instance.new("BlurEffect")
+blur.Enabled = true
+blur.Size = 30
+blur.Parent = workspace.CurrentCamera
 local id = {"345655898","531711813","581404453"} -- Animalcrosing Able Sisters 160442087 SpookySkeleton 345655898
 local playid = id[math.random(1,3)]
 TextLabel_2.Parent = Frame
@@ -54,7 +57,7 @@ if game.PlaceId == 1142908823 then
 	link = 'https://raw.githubusercontent.com/Lennardsid/ww/master/OBFUSCATED_7de78f8_SwordSimulator.lua'
 elseif game.PlaceId == 155615604 then
 link = 'https://raw.githubusercontent.com/Lennardsid/ww/master/OBFUSCATED_06b0ff3_EclipsePrisonLife.lua'
-end
+else link = "https://raw.githubusercontent.com/Lennardsid/ww/master/uilib.lua" end
 local function EISQTWF_fake_script()
 	local script = Instance.new('LocalScript', Frame)
 
@@ -97,7 +100,8 @@ local function EISQTWF_fake_script()
 	script.Parent.Background.BackgroundTransparency = script.Parent.Background.BackgroundTransparency + 1
 	wait(1)
 	tween2:Play()
-	wait(1.1)
+	wait(2.3)
+	blur:Destroy()
 	print(game.PlaceId)
 	loadstring(game:HttpGet(link,true))()
 	wait(4)
