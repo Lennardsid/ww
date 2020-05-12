@@ -32,8 +32,8 @@ TextLabel.TextScaled = true
 TextLabel.TextSize = 14.000
 TextLabel.TextWrapped = true
 
-local id = {"160442087","345655898"} -- Animalcrosing Able Sisters 160442087 SpookySkeleton 345655898
-local playid = id[math.random(1,2)]
+local id = {"345655898","531711813","581404453"} -- Animalcrosing Able Sisters 160442087 SpookySkeleton 345655898
+local playid = id[math.random(1,3)]
 TextLabel_2.Parent = Frame
 TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel_2.BackgroundTransparency = 1.000
@@ -48,7 +48,8 @@ TextLabel_2.TextWrapped = true
 TextLabel_2.Visible = false
 local link = ""
 if playid == "345655898" then TextLabel_2.Text = "Now Playing: Able Sisters Theme - Animal Crossing New Leaf"
-elseif playid == "160442087" then TextLabel_2.Text = "Now Playing: SPOOKY SCARY SKELETONS" end
+elseif playid == "531711813" then TextLabel_2.Text = "Now Playing: The Living Tombstone - SPOOKY SCARY SKELETONS"
+elseif playid == "581404453" then TextLabel_2.Text = "Now Playing: The Living Tombstone - We Are Number One Remix" end
 if game.PlaceId == 1142908823 then
 	link = 'https://raw.githubusercontent.com/Lennardsid/ww/master/OBFUSCATED_7de78f8_SwordSimulator.lua'
 elseif game.PlaceId == 155615604 then
@@ -58,7 +59,7 @@ local function EISQTWF_fake_script()
 	local script = Instance.new('LocalScript', Frame)
 
 	local sound = Instance.new("Sound", game.Workspace)
-	
+
 	sound.SoundId = "rbxassetid://"..playid
 	sound.Volume = 0.5
 	sound:Play()
